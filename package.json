@@ -9,6 +9,7 @@
   "author": "FearDarkness",
   "license": "GPL-3.0",
   "dependencies": {
+    "cheerio": "^0.22.0",
     "request": "^2.74.0",
     "underscore": "^1.8.3"
   }
