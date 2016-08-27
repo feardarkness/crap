@@ -107,13 +107,32 @@ request(options, function (error, response, body) {
 			};
 
 			request(options, function (error, response, body) {
-				console.log(response.req._headers);
-				console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++");
-				console.log(response.headers);
-				console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++");
-				console.log(body);
-				console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++");
-				console.log(nuSecHidden);
+				var options = {
+					url: "http://portal2.fundempresa.org.bo/portal/servlet/SLPago?nombre=casa&nombre-ISN-DDE=0&matricula=&idMatricula=empresas&servlet=SLBasica&matricula-ISN-DDE=0&nit=&NIT-DDE=&licFunc=&licFunc-ISN-DDE=0&submit1=PorNombre&nuSecHidden="+nuSecHidden2,
+					method: 'GET',
+					headers: {
+						"Host": "portal2.fundempresa.org.bo",
+						"User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:50.0) Gecko/20100101 Firefox/50.0",
+						"Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+						"Accept-Language": "en-US,en;q=0.5",
+						"Accept-Encoding": "gzip, deflate",
+						"Referer": "http://portal2.fundempresa.org.bo/portal/servlet/SLEmpresasList",
+						"Upgrade-Insecure-Requests": "1",
+					},
+					followRedirect: true,
+					forever: true,
+					jar: j,
+				};
+				request(options, function (error, response, body) {
+					console.log(response.req._headers);
+					console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++");
+					console.log(response.headers);
+					console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++");
+					console.log(body);
+					console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++");
+					console.log(nuSecHidden);	
+				});
+				
 			});
 
 		});
